@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Takao Wazowsky | About Me</title>
-  <meta name="description" content="Takao Wazowsky – DJ e producer. Ascolta l’anteprima di About Me e fai il pre-save del nuovo brano." />
+  <meta name="description" content="Takao Wazowsky – DJ e producer. Pre-save e streaming links di About Me." />
 
   <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
       --text: #ffffff;
       --muted: rgba(255,255,255,0.7);
       --line: rgba(255,255,255,0.15);
-      --accent: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -107,43 +106,81 @@
       font-size: 14px;
     }
 
-    /* PRE SAVE */
+    /* ===== PRE-SAVE CTA ===== */
+
     .presave {
-      padding: 32px 18px;
+      padding: 28px 18px;
       text-align: center;
+      gap: 14px;
+      display: grid;
     }
 
-    .presave a {
+    .tag {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--muted);
+      background: rgba(0,0,0,0.2);
+    }
+
+    .cta {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 6px 14px;
+      align-items: center;
+
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.1);
       text-decoration: none;
       color: var(--text);
-      display: inline-block;
-    }
-
-    .presave-box {
-      border: 2px solid var(--accent);
-      border-radius: 16px;
-      padding: 20px 26px;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
     }
 
-    .presave-box:hover {
+    .cta:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: rgba(255,255,255,0.16);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
     }
 
-    .presave-now {
-      font-size: 14px;
-      letter-spacing: 4px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .release-date {
-      font-size: 26px;
+    .cta-title {
       font-weight: 700;
       letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .cta-sub {
+      grid-column: 1 / 2;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cta-arrow {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      font-size: 22px;
+      opacity: 0.9;
+    }
+
+    .date {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .date span {
+      color: var(--text);
+      font-weight: 700;
     }
 
     .footer {
@@ -158,26 +195,22 @@
 <body>
   <main class="wrap">
 
-    <!-- TITOLO -->
     <div class="title-main">ABOUT ME</div>
 
-    <!-- COVER -->
     <section class="card hero">
-      <img src="AboutMeTakaowazowsky.jpg" alt="Takao Wazowsky About Me cover" />
+      <img src="AboutMeTakaowazowsky.jpg" alt="Takao Wazowsky – About Me cover" />
     </section>
 
-    <!-- PLAYER -->
     <section class="card">
       <div class="section">
-        <h1> PLAY ME </h1>
-        <p> preview.</p>
+        <h1>Anteprima brano</h1>
+        <p>Premi play per ascoltare.</p>
         <audio controls preload="metadata">
-          <source src="Aboutmepreview.mp3" type="audio/mpeg" />
+          <source src="Aboutmepreview.mp3" type="audio/mpeg">
         </audio>
       </div>
     </section>
 
-    <!-- SOCIAL -->
     <section class="card">
       <div class="section">
         <h1>Social</h1>
@@ -190,14 +223,19 @@
       </div>
     </section>
 
-    <!-- PRE SAVE -->
-    <section class="card presave">
-      <a href="https://distrokid.com/hyperfollow/takaowazowsky/about-me?ref=release" target="_blank">
-        <div class="presave-box">
-          <div class="presave-now"> STREAM IT ON </div>
-          <div class="release-date"> OUT ON 03/13/2026 </div>
-        </div>
-      </a>
+    <!-- PRE SAVE / STREAM -->
+    <section class="card">
+      <div class="presave">
+      
+
+        <a class="cta" href="https://distrokid.com/hyperfollow/takaowazowsky/about-me?ref=release" target="_blank" rel="noopener">
+          <span class="cta-title">PRE-SAVE / STREAM</span>
+          <span class="cta-sub">Open streaming links</span>
+          <span class="cta-arrow">→</span>
+        </a>
+
+        <div class="date">OUT <span>03/13/2026</span></div>
+      </div>
     </section>
 
     <div class="footer">© Takao Wazowsky</div>
